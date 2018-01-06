@@ -60,6 +60,16 @@ function pause() {
     }
 }
 
+// 循环顺序
+function orderChange() {
+  if(!rem.order){
+    rem.order = 0
+  }
+  rem.order++;
+  if(rem.order > 2){
+    rem.order = 0
+  }
+}
 // 播放
 function audioPlay() {
     rem.paused = false;     // 更新状态（未暂停）
@@ -94,7 +104,23 @@ function prevMusic() {
 
 // 播放下一首歌
 function nextMusic() {
-    playList(rem.playid + 1);
+    switch (rem.order ? rem.order : 1) {
+      case 0:
+        playList(rem.playid);
+        break;
+      case 1: 
+        playList(rem.playid + 1);
+        break;
+      case 2: 
+        if (musicList[1] && musicList[1].item.length) {
+          var id = parseInt(Math.random() * musicList[1].item.length)
+          playList(id);
+        }
+        break;
+      default:
+        playList(rem.playid + 1); 
+        break;
+    }
 }
 
 // 歌曲时间变动回调函数
