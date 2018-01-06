@@ -134,6 +134,8 @@ function ajaxUrl(music, callback)
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             layer.msg('歌曲链接获取失败 - ' + XMLHttpRequest.status);
             console.error(XMLHttpRequest + textStatus + errorThrown);
+            alert('error')
+            audioErr()
         }   // error 
     }); //ajax
     
