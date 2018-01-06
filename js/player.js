@@ -107,20 +107,21 @@ function prevMusic() {
 
 // 播放下一首歌
 function nextMusic() {
-    switch (rem.order ? rem.order : 1) {
-      case 1,2: 
-        playList(rem.playid + 1);
-        break;
-      case 3: 
-        if (musicList[1] && musicList[1].item.length) {
-          var id = parseInt(Math.random() * musicList[1].item.length)
-          playList(id);
-        }
-        break;
-      default:
-        playList(rem.playid + 1); 
-        break;
-    }
+  switch (rem.order ? rem.order : 1) {
+    case 1,2: 
+      playList(rem.playid + 1);
+      break;
+    case 3: 
+      if (musicList[1] && musicList[1].item.length) {
+        var id = parseInt(Math.random() * musicList[1].item.length)
+        playList(id);
+      }
+      break;
+    default:
+      playList(rem.playid + 1); 
+      break;
+  }
+}
 // 自动播放时的下一首歌
 function autoNextMusic() {
   if(rem.order && rem.order === 1) {
