@@ -63,12 +63,15 @@ function pause() {
 // 循环顺序
 function orderChange() {
   if(!rem.order){
-    rem.order = 0
+    rem.order = 2
   }
   rem.order++;
-  if(rem.order > 2){
-    rem.order = 0
+  if(rem.order > 3){
+    rem.order = 1
   }
+  var orderDiv = $(".btn-order")
+  orderDiv.removeClass()
+  orderDiv.addClass("player-btn btn-order btn-order-" + rem.order)
 }
 // 播放
 function audioPlay() {

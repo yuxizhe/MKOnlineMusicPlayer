@@ -640,8 +640,9 @@ body {
 }
 
 .btn-play{
-    width: 21px;
+    width: 19px;
     height: 29px;
+    flex: 0 0 30px !important;
     /* margin-top: -14.5px; */
     left: 50%;
     /* margin-left: -10.5px; */
@@ -654,11 +655,23 @@ body {
     /* margin-top: -10px; */
 }
 .btn-order{
-    background-position: 0 -72px;
+    background-position: 0 -205px;
     right: 0;
     width: 19px;
-    height: 20px;
+    height: 25px;
     /* margin-top: -10px; */
+}
+.btn-order-1{
+  background-position: 0 -231px;
+  height: 25px;
+}
+.btn-order-2{
+  background-position: 0 -204px;
+  height: 25px;
+}
+.btn-order-3{
+  background-position: 0 -73px;
+  height: 20px;
 }
 
 /* 音乐进度条区域 */
